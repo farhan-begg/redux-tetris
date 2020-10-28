@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import GridBoard from './components/GridBoard'
-
+import NextBlock from './components/NextBlock'
 
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
       </header>
 
       <GridBoard />
+      <NextBlock />
     </div>
   );
 }
