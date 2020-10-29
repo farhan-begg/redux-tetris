@@ -22,4 +22,4 @@ export default function GridBoard(props) {
             {grid}
         </div>
     )
-} 
+}

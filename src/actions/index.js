@@ -10,8 +10,6 @@ export const RESTART = "RESTART"     // Restart Game
 
 
 
-
-
 export const moveRight = () => {
     return { type: MOVE_RIGHT }
 }

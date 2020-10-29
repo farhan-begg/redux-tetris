@@ -3,15 +3,10 @@ export const random = (min, max) => {
 }
 
 
-
-// Returns the default grid
 export const gridDefault = () => {
     const rows = 18
     const cols = 10
     const array = []
-
-    // Fill array with 18 arrays each containing
-    // 10 zeros (0)
     for (let row = 0; row < rows; row++) {
         array.push([])
         for (let col = 0; col < cols; col++) {
@@ -135,7 +130,7 @@ export const shapes = [
     [0, 0, 0, 0]]]
 ]
 
-
+// Random Shape
 export const randomShape = () => {
     return random(1, shapes.length - 1)
 }

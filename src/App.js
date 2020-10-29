@@ -3,13 +3,13 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducers from './reducers'
 
-import './App.css';
-
 import GridBoard from './components/GridBoard'
 import NextBlock from './components/NextBlock'
 import ScoreBoard from './components/ScoreBoard'
 import Controls from './components/Controls'
-import MessagePopup from './components/MessagePopup'
+import MessagePopUp from './components/MessagePopup'
+import './App.css';
+
 
 const store = createStore(reducers)
 
@@ -24,7 +24,7 @@ function App() {
         <NextBlock />
         <ScoreBoard />
         <Controls />
-        <MessagePopup />
+        <MessagePopUp />
       </div>
     </Provider>
   );
