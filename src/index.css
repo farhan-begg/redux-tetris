@@ -87,7 +87,6 @@ code {
 
 /* Grid Square */
 .grid-square {
-  
   width: var(--tile-size);
   height: var(--tile-size);
   border-width: var(--border-width);
@@ -127,6 +126,7 @@ code {
   border-right-color: var(--button-color-r);
   border-bottom-color: var(--button-color-b);
   grid-area: r;
+  outline:none;
 }
 
 /* App */
@@ -162,6 +162,7 @@ and 'b'. The '.' represents an empty cell on the grid. */
   grid-area: b;
   display: flex;
   flex-direction: row;
+
 }
 
 
@@ -179,6 +180,7 @@ and 'b'. The '.' represents an empty cell on the grid. */
   border-left-color: var(--button-color-l);
   border-right-color: var(--button-color-r);
   border-bottom-color: var(--button-color-b);
+  outline:none;
 }
 
 
@@ -192,6 +194,7 @@ and 'b'. The '.' represents an empty cell on the grid. */
   width: calc(var(--tile-size) * 10);
   height: calc(var(--tile-size) * 10);
   background-color: rgba(255, 255, 255, 0.5);
+  color: #00ff00;
   text-align: center;
 }
 

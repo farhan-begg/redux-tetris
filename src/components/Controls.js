@@ -1,46 +1,69 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { moveDown, moveLeft, moveRight, rotate } from '../actions'
-
 export default function Controls(props) {
     const dispatch = useDispatch()
-    const isRunning = useSelector((state) => state.game.isRunning)
-    const gameOver = useSelector((state) => state.game.gameOver)
-
-    return (
-        <div className={`controls`}>
-            {/* left */}
-            <button
-                disabled={!isRunning || gameOver}
-                className="control-button"
-                onClick={(e) => {
-                    if (!isRunning || gameOver) { return }
+    const { isRunning, gameOver } = useSelector((state) => state.game)
+    useEffect(() => {
+        document.addEventListener('keydown', (e) => {
+            console.log(e)
+            switch (e.keyCode) {
+                case 37: // LEFT
                     dispatch(moveLeft())
-                }}>Left</button>
-            {/* right */}
-            <button
-                disabled={!isRunning || gameOver}
-                className="control-button"
-                onClick={(e) => {
-                    if (!isRunning || gameOver) { return }
-                    dispatch(moveRight())
-                }}>Right</button>
-            {/* rotate */}
-            <button
-                disabled={!isRunning || gameOver}
-                className="control-button"
-                onClick={(e) => {
-                    if (!isRunning || gameOver) { return }
+                    break
+                case 38: // ROTATE/UP
                     dispatch(rotate())
-                }}>Rotate</button>
-            {/* down */}
-            <button
-                disabled={!isRunning || gameOver}
-                className="control-button"
-                onClick={(e) => {
-                    if (!isRunning || gameOver) { return }
+                    break
+                case 39: // RIGHT
+                    dispatch(moveRight())
+                    break
+                case 40: // DOWN
                     dispatch(moveDown())
-                }}>Down</button>
+                    break
+                default:
+                // 
+            }
+        })
+    }, [])
+    return (
+        <div className="controls">
+
+            <button className="control-button" onClick={(e) => {
+                if (!isRunning || gameOver) { return }
+                dispatch(moveLeft())
+            }}>⇠</button>
+            {/* rotate */}
+            <button className="control-button" onClick={(e) => {
+                if (!isRunning || gameOver) { return }
+                dispatch(rotate())
+            }}>⇡</button>
+            {/* down */}
+            <button className="control-button" onClick={(e) => {
+                if (!isRunning || gameOver) { return }
+                dispatch(moveDown())
+            }}>⇣</button>
+
+            <button className="control-button" onClick={(e) => {
+                if (!isRunning || gameOver) { return }
+                dispatch(moveRight())
+            }}>⇢</button>
         </div>
     )
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
